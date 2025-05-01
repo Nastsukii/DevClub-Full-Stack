@@ -1,1 +1,35 @@
-a
+<form action="" method="get"> <!-- Action vai enviar para onde quero meus dados, e o method vai enviar os dados pela URL -->
+    <label>
+        Sua rua
+        <input type="text" name="rua" autocomplete="street-address">
+    </label>
+    <label>
+        Numero da sua casa
+        <input type="text" name="numero" autocomplete="cc-number">
+    </label>
+    <label>
+        sua idade
+        <input type="number" name="idade">
+    </label>
+
+    <button type="reset"> Limpar campos </button> <!-- Esse type limpa todos os campos -->
+    <button type="submit"> enviar dados</button> <!-- Sempre que um botao desse type estiver dentro do form, ele vai pegar todos os dados e enviar para onde desjado-->
+</form>
+
+
+<form enctype="multipart/form-data" method="post"> <!-- o enctype vai deixar enviar arquivos comofiles e o method vai enviar os dados por um lugar que nao da para ver -->
+    <label>
+        Sua rua
+        <input type="text" name="rua" autocomplete="street-address">
+    </label>
+    <label>
+        Numero da sua casa
+        <input type="text" name="numero" autocomplete="cc-number">
+    </label>
+    <label>
+        sua idade
+        <input type="number" name="idade">
+    </label>
+
+    <button type="submit"> enviar dados</button> <!-- Sempre que um botao desse type estiver dentro do form, ele vai pegar todos os dados e enviar para onde desjado-->
+</form>
