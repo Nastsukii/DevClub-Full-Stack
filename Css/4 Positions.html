@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper1">
+        Teste
+    </div>
+    <div class="wrapper2">
+        Teste
+    </div>
+    <div class="wrapper3">
+        Teste
+    </div>
+    <style>
+        /* Estilos globais */
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          background-color: #f0f0f0;
+        }
+
+        /* Estilos para os wrappers */
+        .wrapper1, .wrapper2, .wrapper3 {
+          width: 300px;
+          height: 200px;
+          margin: 20px auto;
+          padding: 20px;
+          background-color: #fff;
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos para o texto */
+        .wrapper1 {
+          background-color: #f7f7f7;
+          color: #333;
+          position: static; /* Padrão, vai ficar parado na posição original*/
+          position: relative; /* vai ficar parado na posição original e pode ser movido*/
+        }
+
+        .wrapper2 {
+          background-color: #e7e7e7;
+          color: #666;
+          position: fixed; /* vai ficar fixo na posição*/
+          position:absolute; /*Fica numa posicao que pode ser movida relativo ao elemento pai ou a tela*/
+        }
+
+        .wrapper3 {
+          background-color: #d7d7d7;
+          color: #999;
+          position: sticky; /* vai ficar fixo na posição quando chegar na medida que quer*/
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,44 @@
+/* Estilos globais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+  }
+  
+  /* Estilos para os wrappers */
+  .wrapper1, .wrapper2, .wrapper3 {
+    width: 300px;
+    height: 200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para o texto */
+  .wrapper1 {
+    background-color: #f7f7f7;
+    color: #333;
+    display: block; /* ocupa a linha inteira*/
+  }
+  
+  .wrapper2 {
+    background-color: #e7e7e7;
+    color: #666;
+    display: inline; /* Vai deixar todos os itens um do lado do outro, ele se adapta ao conteudo, nao tem como colocar altura ou largura    */
+    
+  }
+  
+  .wrapper3 {
+    background-color: #d7d7d7;
+    color: #999;
+    display: inline-block; /* os itens ficao na mesma linha, mas pode colocar altura e largura */
+  }

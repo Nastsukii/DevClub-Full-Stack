@@ -1,0 +1,4 @@
+.caixa{
+    box-sizing: border-box; /* vai manter o tamanho da caixa mesmo com o padding ou margin */
+    box-sizing: content-box; /* vai ir crescendo com o padding ou margin */
+}
