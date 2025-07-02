@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0; /* deixa o padding todo zerado no projeto inteiro*/
+    margin: 0; /* deixa a margin zerada*/
+    box-sizing: border-box; /* com ou sem margin e padding, vai sempre manter o tamanho da caixa o mesmo sem altera-lo*/
+    font-family: 'Roboto', sans-serif; /* Vai deixar todas as fontes com roboto, e se nao funcionar vai ser sans-serif*/
+}
+
+.caixa{
+    background-color: #8A51FC;
+}
+
+.box{
+    border-radius: 20px;
+    border: 1px;
+    color: #772FD3;
+    background-color
+}
+
+
+
