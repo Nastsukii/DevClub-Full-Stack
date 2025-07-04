@@ -9,37 +9,39 @@
 </head>
 <body>
     <div class="caixa">
-    <img src="./assets/gif.gif" alt="gif">
+    <img id="img-gif" src="./assets/gif.gif" alt="gif">
     <main class="box">
-        <label>Converter <b>de:</b>
-            <select> 
-                <option> R$ Real brasileiro</option>
-            <select>
-        <label>Converter <b>para:</b>
-            <select> 
-                <option> US$ Dólar americano </option>
-                <option> €  Euro </option>
-            <select>
-        <label> Valor: 
-            <input readonly>
-        <button type="button"> Converter </button>
-        </main>
-
+        <article class="opcoes">
+            <label>Converter <span>de:</span> </label>
+                <select> 
+                    <option> R$ Real brasileiro</option>
+                <select>
+            <label>Converter <span>para:</span> </label>
+                <select> 
+                    <option> US$ Dólar americano </option>
+                    <option> €  Euro </option>
+                <select>
+            <label> <span>Valor: </span> </label>
+                <input>
+            <button id="converter"> Converter </button>
+        </article>
+       
         <section>
             <figure>   
-                <img src="./assets/brasil.png" alt="imagem-brasil">
-                <figcaption>Brasil</figcaption>
+                <img class="logo-moeda" src="./assets/brasil.png" alt="imagem-brasil">
+                <figcaption>Real</figcaption>
             </figure>
-            <p>
-            ...
+            <p class="moeda">
+            R$ 100,00
             </p>
-            <img src="./assets/arrow.png" alt="seta-para-baixo">
+            <img id="seta" src="./assets/arrow.png" alt="seta-para-baixo">
             <figure>   
-                <img src="./assets/euro.png" alt="imagem-brasil">
-                <figcaption>Brasil</figcaption>
+                <img  class="logo-moeda" src="./assets/usa.png" alt="imagem-brasil">
+                <figcaption>Dólar</figcaption>
             </figure>
-            <p>...</p>
+            <p class="moeda-conversao">$ 600,00<p>
         </section>
+         </main>
     </div>
 </body>
 </html>
