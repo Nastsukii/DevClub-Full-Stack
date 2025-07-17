@@ -16,9 +16,9 @@
                     <option> R$ Real brasileiro</option>
                 </select>
             <label>Converter <span>para:</span> </label>
-                <select> 
-                    <option> US$ Dólar americano </option>
-                    <option> €  Euro </option>
+                <select class="selecionar-moeda"> 
+                    <option value="dolar"> US$ Dólar americano </option>
+                    <option value="euro"> €  Euro </option>
                 </select>
             <label> <span>Valor: </span> </label>
                 <input id="inputValor" type="number">
@@ -35,8 +35,8 @@
             </p>
             <img id="seta" src="./assets/arrow.png" alt="seta-para-baixo">
             <figure>   
-                <img  class="logo-moeda" src="./assets/usa.png" alt="imagem-brasil">
-                <figcaption>Dólar</figcaption>
+                <img  class="logo-moeda" id="logo-moeda-converter" src="./assets/usa.png" alt="imagem-brasil">
+                <figcaption class="nome-da-moeda">Dólar Americano</figcaption>
             </figure>
             <p class="moeda-conversao">$ 600,00<p>
         </section>

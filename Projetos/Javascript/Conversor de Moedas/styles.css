@@ -120,3 +120,7 @@ p{
     width: 35px;
     height: 49px;
 }
+
+figure{
+    display: contents;
+}
