@@ -29,6 +29,7 @@ function converteMoeda(){ // Abertura da função
         }).format(inputValor/valorEuro)
 
     }
+    
 
     console.log(moedaConversao.textContent) // Aparecer no console o valor convertido
 }
