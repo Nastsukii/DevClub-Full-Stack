@@ -9,6 +9,8 @@ function converteMoeda(){ // Abertura da função
 
     const valorDolar = 5.50; // Valor do dolar
     const valorEuro = 6.50; // Valor do Euro
+    const valorLibra = 7.45; // Valor da Libra
+    const valorBitcoin = 662252.33; // Valor do Bitcoin
     
         moeda.innerHTML = new Intl.NumberFormat("pt-BR", { // Está pegando o valor da moeda e colocando no html utilzando do NumberFormat
         style: "currency", // Configura para entender que quer formatar para moeda
@@ -29,7 +31,18 @@ function converteMoeda(){ // Abertura da função
         }).format(inputValor/valorEuro)
 
     }
-    
+    if(selecionarMoeda.value == "libra"){
+        moedaConversao.innerHTML = new Intl.NumberFormat("en-GB",{
+            style: "currency",
+            currency: "GBP"
+        }).format(inputValor/valorLibra)
+    }
+    if(selecionarMoeda.value == "bitcoin"){
+        moedaConversao.innerHTML = new Intl.NumberFormat("en-US",{
+            style: "currency",
+            currency: "BTC"
+        }).format(inputValor/valorBitcoin)
+    }
 
     console.log(moedaConversao.textContent) // Aparecer no console o valor convertido
 }
@@ -45,6 +58,14 @@ function alterarLogo(){ // Toda vez que o evento de trocar a moeda acontercer, v
     if(selecionarMoeda.value == "euro"){ // faz a mesma coisa de cima
         nomeDaMoeda.innerHTML = "Euro"
         logoDaMoeda.src = './assets/euro.png'
+    }
+    if(selecionarMoeda.value == "libra"){
+        nomeDaMoeda.innerHTML = "Libra"
+        logoDaMoeda.src = "./assets/libra.png"
+    }
+    if(selecionarMoeda.value == "bitcoin"){
+        nomeDaMoeda.innerHTML = "Bitcoin"
+        logoDaMoeda.src = "./assets/bitcoin.png"
     }
 
     converteMoeda() // chama a função de converter para dar um refresh nos valores e puxar o certo
