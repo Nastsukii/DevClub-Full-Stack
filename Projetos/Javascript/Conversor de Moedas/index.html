@@ -12,7 +12,7 @@
     <main class="box">
         <article class="opcoes">
             <label>Converter <span>de:</span> </label>
-                <select class="selecionar-de"> 
+                <select class="selecionar-moeda-de"> 
                     <option value="real"> R$ Real brasileiro</option>
                     <option value="dolar"> US$ Dólar americano </option>
                     <option value="euro"> €  Euro </option>
@@ -21,11 +21,11 @@
                 </select>
             <label>Converter <span>para:</span> </label>
                 <select class="selecionar-moeda"> 
+                    <option value="real"> R$ Real brasileiro</option>
                     <option value="dolar"> US$ Dólar americano </option>
                     <option value="euro"> €  Euro </option>
                     <option value="libra"> £ Libra </option>
                     <option value="bitcoin"> ₿ Bitcoin </option>
-                    <option value="real"> R$ Real brasileiro</option>
                     <label> <span>Valor: </span> </label>
                 <input id="inputValor" type="number" placeholder="Digite o valor ...">
             <button id="converter"> Converter </button>
@@ -34,7 +34,7 @@
         <section>
             <figure>   
                 <img class="logo-moeda" id="logo-moeda-de" src="./assets/brasil.png" alt="imagem-brasil">
-                <figcaption>Real</figcaption>
+                <figcaption class="moeda-origem">Real</figcaption>
             </figure>
             <p class="moeda">
             R$ 100,00
