@@ -2,12 +2,32 @@ const botaoConverter = document.getElementById("converter"); // Está pegando o 
 const selecionarMoedaParaConverter = document.querySelector(".selecionar-moeda") // Está pegando a seleção de moedas do HTML
 const selecionarMoeda = document.querySelector(".selecionar-moeda-de"); // Vai pegar o Select que esta selecionando a moeda original
 
+
+
+
+function formatarMoeda(valor, tipoMoeda){
+    const configMoedas = {
+    real: {locale: "pt-BR", currency: "BRL"},
+    dolar: {locale: "en-US", currency: "USD"},
+    euro: {locale: "de-DE", currency: "EUR"},
+    libra: {locale: "en-GB", currency: "GBP"},
+    bitcoin: {locale: "en-US", currency: "BTC"},
+}
+
+    const {locale, currency} = configMoedas[tipoMoeda]
+
+    return new Intl.NumberFormat(locale, {
+        style: "currency",
+        currency: currency
+    }).format(valor)
+}
+
+
 function converteMoeda(){ // Abertura da função
     const inputValor = document.getElementById("inputValor").value; // Vai pegar a quantia que foi digitado pelo usuario no input
     const moeda = document.querySelector(".moeda"); // Este é o o valor da moeda que vai ser convertida
     const moedaConversao = document.querySelector(".moeda-conversao"); // Este é o valor da moeda que foi já esta convertida
   
-
     const valorDolar = 5.50; // Valor do dolar
     const valorEuro = 6.50; // Valor do Euro
     const valorLibra = 7.45; // Valor da Libra
@@ -33,36 +53,9 @@ function converteMoeda(){ // Abertura da função
     console.log(valorReal)
 
     // Mostra o valor original formatado
-    if (selecionarMoeda.value == "real") {
-        moeda.innerHTML = new Intl.NumberFormat("pt-BR", {
-            style: "currency",
-            currency: "BRL"
-        }).format(inputValor);
-    }
-    if (selecionarMoeda.value == "dolar") {
-        moeda.innerHTML = new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "USD"
-        }).format(inputValor);
-    }
-    if (selecionarMoeda.value == "euro") {
-        moeda.innerHTML = new Intl.NumberFormat("de-DE", {
-            style: "currency",
-            currency: "EUR"
-        }).format(inputValor);
-    }
-    if (selecionarMoeda.value == "libra") {
-        moeda.innerHTML = new Intl.NumberFormat("en-GB", {
-            style: "currency",
-            currency: "GBP"
-        }).format(inputValor);
-    }
-    if (selecionarMoeda.value == "bitcoin") {
-        moeda.innerHTML = new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "BTC"
-        }).format(inputValor);
-    }
+
+    moeda.innerHTML = formatarMoeda(inputValor, selecionarMoeda.value)
+    
 
     if(selecionarMoedaParaConverter.value == "real"){
         moedaConversao.innerHTML = new Intl.NumberFormat("pt-BR", { // Está pegando o valor da moeda e colocando no html utilzando do NumberFormat
@@ -100,6 +93,7 @@ function converteMoeda(){ // Abertura da função
 
     console.log(moedaConversao.textContent) // Aparecer no console o valor convertido
 }
+
 
 function alterarLogo(){ // Toda vez que o evento de trocar a moeda acontercer, vai chamar a função
     const nomeDaMoeda = document.querySelector(".nome-da-moeda") // Pega o paragrafo do nome da moeda convertida
