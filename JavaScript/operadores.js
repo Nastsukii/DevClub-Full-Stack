@@ -49,3 +49,27 @@ console.log(igual)
     }else{
         console.log("Falso")
     }
+
+
+    //  ======= Lógico =======
+    
+    console.log(true && true && true) // esta perguntando se tudo é verdadeiro, se tiver um falso fica falso, para ser verdadeiro, todos tem q ser verdadeiro
+
+    console.log(true || true || false) // se tiver um verdadeiro, ja fica tudo verdadeiro, só vira falso se todos forem falsos
+
+    console.log(!true) // ele inverte o valor, virando false
+
+        
+
+     // ======= type of e deleete =======
+
+     const num = {
+        idade: 30,
+        nome: "Luiz",
+        cidade: "Catanduvas"
+     }
+     console.log(typeof num) // vai retornar o tipo da variavel 
+
+     delete num.nome // vai deletar um objeto
+     
+     console.log(num)
