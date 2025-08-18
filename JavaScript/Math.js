@@ -10,7 +10,7 @@ console.log(pi)
 const teto = Math.ceil(12.123) // arredonda para o numero mais proximo de cima
 console.log(teto)
 
-const chao = Math.floor(12.123) // arredonda o numero para baixo
+const chao = Math.floor(12.123) // arredonda o numero para baixo    
 console.log(chao)
 
 const randon = Math.random()
