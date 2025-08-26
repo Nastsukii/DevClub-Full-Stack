@@ -1,126 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-*{
-    padding: 0; /* deixa o padding todo zerado no projeto inteiro*/
-    margin: 0; /* deixa a margin zerada*/
-    box-sizing: border-box; /* com ou sem margin e padding, vai sempre manter o tamanho da caixa o mesmo sem altera-lo*/
-    font-family: 'Roboto', sans-serif; /* Vai deixar todas as fontes com roboto, e se nao funcionar vai ser sans-serif*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-.caixa{
-    background-color: #8A51FC;
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caixa {
+    background-color: #0f3460;
     display: flex;
     align-items: center;
     flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 20px;
 }
 
-#img-gif{
+#img-gif {
     width: 300px;
     margin-bottom: 16px;
 }
 
-
-.box{   
+.box {
     width: 375px;
     border-radius: 20px;
-    background-color: #F4F4F4;
-    padding: 44px 24px 23px 24px ;
+    background-color: #1f1f2e;
+    padding: 44px 24px 23px 24px;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.logo-moeda{
+.logo-moeda {
     width: 44px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); 
-
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
 }
 
-.opcoes{
-    display: flex;;
+.opcoes {
+    display: flex;
     flex-direction: column;
 }
 
-label{
+label {
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
-    color: #777777;
+    color: #e0e0e0;
     margin-bottom: 6px;
 }
 
-span{
-font-weight: 700;
-font-size: 14px;
-line-height: 18px;  
+span {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
 }
 
-button, select, input{
+button, select, input {
     width: 327px;
     height: 48px;
     border-radius: 4px;
-    opacity: 1;
-    top: 258px;
-    left: 24px;
-    border-width: 1px;
+    border: 1px solid #444;
     margin-bottom: 24px;
-    border: 1px solid #BBBBBB;
-    appearance: none;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    font-weight: 700;
+    font-size: 16px;
     outline: none;
-    }   
-
-select{
-    cursor: pointer; 
+    padding: 10px;
 }
 
-#converter{
-    background-color: #772FD3;
+select {
+    cursor: pointer;
+}
+
+#converter {
+    background-color: #4facfe;
     font-weight: 700;
     font-size: 18px;
     color: #FFFFFF;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-select, input{
-    font-weight: 700;
-    font-size: 16px;
-    color: #555555;
-    padding: 15px;
+#converter:hover {
+    background-color: #3a8bcf;
 }
 
-
-section{
+section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #772FD3;
+    border: 1px solid #4facfe;
     width: 327px;
     border-radius: 20px;
-    border-width: 1px;
     padding: 12px 0;
+    background-color: #2a2a2a;
 }
 
-figcaption{
+figcaption {
     font-weight: 400;
     font-size: 14px;
-    color: #777777;
+    color: #e0e0e0;
     text-align: center;
-    margin: 4px 0 2px 0;  
+    margin: 4px 0 2px 0;
 }
 
-p{
+p {
     font-weight: 700;
     font-size: 20px;
-    color: #555555  ;
+    color: #e0e0e0;
 }
 
-#seta{
+#seta {
     margin: 15px 0;
     width: 35px;
     height: 49px;
 }
 
-figure{
+figure {
     display: contents;
 }

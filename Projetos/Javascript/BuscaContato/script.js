@@ -4,7 +4,7 @@ const button = document.querySelector('button')
 
 
 function buscar() {
-    const input = document.querySelector('input').value
+    const input = document.querySelector('input').value.toLowerCase()
 
 
     const contacts = [
@@ -15,14 +15,25 @@ function buscar() {
         { name: 'Pedro', number: '(11) 23564-2235' }
     ]
 
-    for (let i = 0; i < contacts.length; i++) {
-
-        if (input === contacts[i].name) {
-            p.innerHTML = `O nome do contato é ${contacts[i].name} e o telefone é ${contacts[i].number}`
+    
+    for(const contato of contacts){
+        if(input === contato.name.toLowerCase()){
+            p.innerHTML = `O nome do contato é ${contato.name} e o telefone é ${contato.number}`
             break
-        }else{
-            p.innerHTML = "Contato não encontrado"
+        } else{
+             p.innerHTML = "Contato não encontrado"
         }
     }
+
+
+    // for (let i = 0; i < contacts.length; i++) {
+
+    //     if (input === contacts[i].name.toLowerCase()) {
+    //         p.innerHTML = `O nome do contato é ${contacts[i].name} e o telefone é ${contacts[i].number}`
+    //         break
+    //     }else{
+    //         p.innerHTML = "Contato não encontrado"
+    //     }
+    // }
 
 }
