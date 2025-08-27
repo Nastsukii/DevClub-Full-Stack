@@ -25,7 +25,7 @@ function buscar() {
         }
     }
 
-
+    
     // for (let i = 0; i < contacts.length; i++) {
 
     //     if (input === contacts[i].name.toLowerCase()) {
