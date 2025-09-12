@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: #0f3460;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 40px 30px;
+    width: 350px;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.titulo::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.icons button {
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.icons button:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 25px rgba(79, 172, 254, 0.9);
+}
+
+.icons button:active {
+    transform: translateY(2px) scale(0.95);
+    box-shadow: 0 3px 10px rgba(79, 172, 254, 0.5);
+}
+
+.pontos {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 10px 0;
+    color: #cfd8dc;
+}
+
+.pontos span {
+    color: #4facfe;
+    font-weight: 900;
+    font-size: 1.4rem;
+    margin-left: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+    .container {
+        width: 90vw;
+        padding: 30px 20px;
+    }
+
+    .icons button {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+
+    .titulo {
+        font-size: 2rem;
+    }
+}
