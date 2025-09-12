@@ -1,42 +1,38 @@
-const resultado = document.querySelector(".resultado")
-const meusPontos = document.getElementById("meusPontos")
-const alexaPontos = document.getElementById("pontosAlexa") 
+const result = document.querySelector('.resultado') // vai mapear o paragrafo de resultado
+const myPoints = document.getElementById('meusPontos') // vai mapear o span dos meus pontos
+const AlexaPoints = document.getElementById('pontosAlexa') // vai mapear os pontos do oponente
 
+let personPoints = 0 // os valores dos pontos vao iniciar zerados
+let machinePoints = 0
 
-let contadorPontosEu = 0 // os contadores vao iniciar em 0
-let contadorPontosAlexa = 0
-
-const playHuman = (escolhaDoUsuario) => { // vai pegar o valor que o usuario escolheu do html
-    playGame(escolhaDoUsuario, playMachine()) // quando o usuario escolher o valor ele vai enviar o valor escolhido e o da maquina para essa função   
+const playPerson = (valor) => { // vai pegar o valor que foi escolhido la do html
+    playMatch(valor, playMachine())
 }
 
 const playMachine = () => { // vai criar a escolha da maquina
-    const opcoes = ['pedra', 'tesoura', 'papel'] // vai dar essas 3 opções iguais da pessoa
-    const randomNumber = Math.floor (Math.random() * 3) // vai escolher um numero entre 0 e 1 e vai fazer vezes 3 e aarredondar para o menor para dar um numero inteiro
+    const options = ['pedra', 'papel', 'tesoura'] // ele seta que tera essas tres opções para escolher
+    const choice = Math.floor(Math.random() * 3) // vai fazer ele escolher um numero de 0 a 1 e vai multiplicar por 3 e arredondar para baixo
 
-    return opcoes[randomNumber] // vai escolher aleatóriamente uma das 3 posições e puxando o valor dela
+    return options[choice]  // vai retornar o valor da posição que foi sorteado
 }
 
-const playGame = (jogadorHumano, jogadorAlexa) => { // vai configurar quem ganhou e os pontos recebendo os dois valores da pessoa e maquinha 
-    console.log("Humano" + jogadorHumano + "Maquina" + jogadorAlexa) // vai jogar no console os valores escolhidos
+const playMatch = (valuePerson, valueMachine) => { // vai criar as configurações de perca ou ganho
 
+    console.log('Pessoa: ' + valuePerson + ' Maquina: ' + valueMachine) // vai jogar no console oque cada um tirou
 
-    if (jogadorHumano === jogadorAlexa){ // vai dizer quando for empate
-        resultado.innerHTML = "Deu empate"
+    if (valuePerson === valueMachine) { // se os valores sairem iguais da empate
+        result.innerHTML = 'Deu empate'
 
-    } else if ((jogadorHumano === "papel" && jogadorAlexa === "pedra") ||
-     (jogadorHumano === "pedra" && jogadorAlexa === "tesoura" ) ||
-     (jogadorHumano === "tesoura" && jogadorAlexa === "papel")){ // vai puxar todas as chances da pessoa ganhar com && vai dizer que as duas opções tem q ser verdadeira e o || é para falar que pode ser aquelas condições tbm
-        
-        contadorPontosEu++ // aqui sempre que o humano ganhar ele vai somar mais um la nas variaveis dos pontos 
+    } else if ((valuePerson === 'pedra' && valueMachine === 'tesoura') ||
+        (valuePerson === 'tesoura' && valueMachine === 'papel') ||
+        (valuePerson === 'papel' && valueMachine === 'pedra')) { // se as combinações de valores sairem iguais essas, vou sair como vitorioso
 
-        meusPontos.innerHTML = contadorPontosEu // vai substituir o texto pelo valor
-        resultado.innerHTML = "Você venceu"
-    }else{ // aqui se nao der nem empate e nem o humano vencer entao a maquina ganhou 
-        contadorPontosAlexa++ // vai somar 1 nos pontos da maquina
-
-        alexaPontos.innerHTML = contadorPontosAlexa // vai substituir os valores
-        resultado.innerHTML = "Você perdeu"
+        personPoints++
+        myPoints.innerHTML = personPoints
+        result.innerHTML = 'Você ganhou!!' // vai mudar o resultado falando que eu ganhei
+    } else { // se nao sair nenhuma das alternativas a maquina vai ter ganhado
+        machinePoints++
+        AlexaPoints.innerHTML = machinePoints
+        result.innerHTML = 'Você perdeu' // vai mudar o resultado para perdido
     }
 }
-
