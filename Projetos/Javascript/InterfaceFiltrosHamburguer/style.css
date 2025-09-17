@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+header button {
+    background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 15px 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    line-height: 1.2;
+    user-select: none;
+    min-width: 110px;
+}
+
+header button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(79, 172, 254, 0.9);
+}
+
+header button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 10px rgba(79, 172, 254, 0.5);
+}
+
+ul {
+    list-style: none;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+ul li {
+    background-color: #0f3460;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+ul li:hover {
+    background-color: #16213e;
+}
+
+ul li img {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    object-fit: cover;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+ul li p {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+}
+
+ul li p:nth-child(3) {
+    margin-left: auto;
+    font-size: 1.1rem;
+    color: #4facfe;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    header {
+        gap: 10px;
+    }
+
+    header button {
+        min-width: 90px;
+        font-size: 0.9rem;
+        padding: 12px 15px;
+    }
+
+    ul li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    ul li p:nth-child(3) {
+        margin-left: 0;
+        margin-top: 8px;
+    }
+
+    ul li img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+    }
+}
