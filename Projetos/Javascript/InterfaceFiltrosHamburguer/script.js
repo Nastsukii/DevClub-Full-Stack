@@ -1,19 +1,25 @@
 const botaoForEach = document.getElementById('for-each')  // aqui pega o botao do html
 const lista = document.querySelector('ul') // vai pegar a ul que esta vazia no html
 const botaoMapear = document.getElementById('map')
-
+const botaoReduce = document.getElementById('reduce')
+const botaoFilter = document.getElementById('filter')
 
 
 const mostrarTudo = (produto) => {  // vai receber um valor que vai ser um array
     let myLi = '' // vai criar um array de li vazia
 
+    const formatadorMoeda = new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+    });
+
     produto.forEach(item => { // vai fazer passar de item por item no array recebido
         myLi += // vai adicionar a li na lista de li vazia e sempre adicionando mais um para ir sempre uma li nova
-        ` 
+            ` 
      <li> 
            <img src=${item.src}>
            <p>${item.name}</p>
-           <p>R$ ${item.price}</p>
+           <p>${formatadorMoeda.format(item.price)}</p>
         </li>
     `
     })
@@ -22,6 +28,7 @@ const mostrarTudo = (produto) => {  // vai receber um valor que vai ser um array
 }
 
 const darDesconto = () => {
+    
     const newPrice = menuOptions.map(item => ({ // vai mapear o menuoptions e ja retornar o valor
         ...item, // os ... coloca todos os itens na mesa para podermos utlizar apenas uma parte deles
         price: item.price * 0.9 // vai dar os 10% de desconto e deixar o resto como está
@@ -29,6 +36,27 @@ const darDesconto = () => {
     mostrarTudo(newPrice) // vai enviar os novos valores pro foreach
 }
 
+const somarTudo = () => {
+     const formatadorMoeda = new Intl.NumberFormat('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+    });
+    const valorTotal = menuOptions.reduce((acc, price) => acc + price.price, 0)  // vai usar o reduce para somar os valores desde o 0
+    lista.innerHTML = ` <li>
+    <p> A soma total de todos os produtos é ${formatadorMoeda.format(valorTotal)}.</p>
+    </li>
+    `
+}
+
+const filtrarVegano = () => {
+    const produtosVeganos = menuOptions.filter(produto => produto.vegan) // vai filtrar, o if e o else estao escondidgo, mas se o produto for vegano ele retorna true q vai colocar dentro do array
+
+    mostrarTudo(produtosVeganos) // vai jogar pro foreach colocar esse array
+}
+
+
 
 botaoForEach.addEventListener('click', () => mostrarTudo(menuOptions)) // esse ele vai pegar o evento de click do botao e chamar a funcao ja com um valor
 botaoMapear.addEventListener('click', darDesconto)
+botaoReduce.addEventListener('click', somarTudo)
+botaoFilter.addEventListener('click', filtrarVegano)
