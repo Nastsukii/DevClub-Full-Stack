@@ -1,0 +1,20 @@
+{
+  "name": "node-conceitos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "Luiz Antonio Comiran Bueno",
+  "license": "ISC",
+  "description": "Para aprender conceitos do Node",
+  "type": "module",
+  "dependencies": {
+    "@prisma/client": "^6.16.2",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "prisma": "^6.16.2"
+  }
+}

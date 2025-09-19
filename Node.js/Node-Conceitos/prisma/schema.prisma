@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/prisma" // agora vai gerar dentro do Node-Conceitos
+}
+
+
+datasource db { // vai criar a caixa de configs do banco
+  provider = "mongodb" // vai dizer qual banco é
+  url      = env("DATABASE_URL") // vai dar a url do banco
+}
+
+model User {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId // esta falando que vai gerar automaticamente
+  email   String   @unique // @unique quer dizer que nao vai deixar repetir
+  name    String
+  age     Int
+  // se eu colcoar um ? ele torna-o opcional 
+}
