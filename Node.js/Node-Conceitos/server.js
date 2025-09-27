@@ -1,12 +1,12 @@
 import express from 'express' // ta importando o express da nova forma
 import { PrismaClient } from './generated/prisma/index.js'; // vai chamar o prisma
-
+import cors from 'cors'
 
 const prisma = new PrismaClient() // utilizar o prisma pelo nome da variavel
 
 const app = express() // esta falando que o app vai ser o express quando for utilizar
 app.use(express.json()) // avisa o express que esta sendo usado json
-
+app.use(cors())
 
 
 
@@ -55,5 +55,3 @@ app.listen(3000) // vai mostrar a posta que esta rodando no localhost
 
 
 
-// username: Lacb
-// senha: charuto030306
