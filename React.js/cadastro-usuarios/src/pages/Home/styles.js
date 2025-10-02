@@ -57,29 +57,4 @@ span{
 }
 `
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export const ButtonCadastrar = styled.button``;
